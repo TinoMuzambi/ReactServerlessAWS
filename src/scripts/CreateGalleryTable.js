@@ -12,7 +12,7 @@ var params = {
 		// Partition Key
 		{ AttributeName: "src", KeyType: "HASH" },
 		// Sort Keys
-		{ AttributeName: "alt", KeyType: "RANGE" },
+		{ AttributeName: "class", KeyType: "RANGE" },
 	],
 	AttributeDefinitions: [
 		{ AttributeName: "src", AttributeType: "S" },
@@ -21,10 +21,10 @@ var params = {
 	],
 	LocalSecondaryIndexes: [
 		{
-			IndexName: "ClassIndex",
+			IndexName: "AltIndex",
 			KeySchema: [
 				{ AttributeName: "src", KeyType: "HASH" },
-				{ AttributeName: "class", KeyType: "RANGE" },
+				{ AttributeName: "alt", KeyType: "RANGE" },
 			],
 			Projection: {
 				ProjectionType: "KEYS_ONLY",
