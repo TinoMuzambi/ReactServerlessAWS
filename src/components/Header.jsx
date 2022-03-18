@@ -1,3 +1,5 @@
+import menuLinksData from "./data/menu_links.json";
+
 const Header = () => {
 	return (
 		<header id="intro">
