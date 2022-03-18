@@ -5,18 +5,18 @@ AWS.config.update({
 	region: "us-east-1",
 });
 
-console.log("Writing entries to Accessibilities table.");
+console.log("Writing entries to Services table.");
 
 var dynamodb = new AWS.DynamoDB.DocumentClient();
-var accessibilitiesData = JSON.parse(
+var servicesData = JSON.parse(
 	fs.readFileSync("../components/data/services_amenities.json", "utf8")
 );
 
-accessibilitiesData.forEach(function (accessibililty) {
+servicesData.forEach(function (service) {
 	var params = {
 		TableName: "ServicesAmenities",
 		Item: {
-			name: accessibililty.name,
+			name: service.name,
 		},
 	};
 
@@ -24,10 +24,10 @@ accessibilitiesData.forEach(function (accessibililty) {
 		if (err)
 			console.error(
 				"Unable to load data into table for accessibility",
-				accessibililty.name,
+				service.name,
 				". Error: ",
 				JSON.stringify(err, null, 2)
 			);
-		else console.log("Added", accessibililty.name, "to table.");
+		else console.log("Added", service.name, "to table.");
 	});
 });
