@@ -21,7 +21,7 @@ galleryImagesData.forEach(function (galleryImage) {
 		Item: {
 			src: galleryImage.src,
 			alt: galleryImage.alt,
-			className: className,
+			class: className,
 		},
 	};
 
