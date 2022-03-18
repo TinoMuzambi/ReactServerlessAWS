@@ -13,7 +13,7 @@ var galleryImagesData = JSON.parse(
 );
 
 galleryImagesData.forEach(function (galleryImage) {
-	var className = galleryImage.className;
+	var className = galleryImage.class;
 	if (className.trim() === "") className = "no_class";
 
 	var params = {
