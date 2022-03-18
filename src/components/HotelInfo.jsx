@@ -1,4 +1,5 @@
 import servicesAmenitiesData from "./data/services_amenities.json";
+import accessibilityData from "./data/accessibility.json";
 
 const HotelInfo = () => {
 	return (
@@ -56,19 +57,9 @@ const HotelInfo = () => {
 						needs:
 					</p>
 					<ul>
-						<li>Grab bars on tub walls</li>
-						<li>Shower chairs</li>
-						<li>Hand held shower sprayers</li>
-						<li>Higher toilets &amp; toilet modifiers</li>
-						<li>Lower sink faucet handles</li>
-						<li>Wheelchair clearance under sinks &amp; vanity</li>
-						<li>Lower racks in closet</li>
-						<li>TDD machines</li>
-						<li>Telephone light signalers &amp; smoke alarms</li>
-						<li>Telephone amplification handsets</li>
-						<li>Closed captioned television converters</li>
-						<li>Vibrating alarm clocks</li>
-						<li>Telephones with volume control</li>
+						{accessibilityData.map((item, key) => (
+							<li key={key}>{item.name}</li>
+						))}
 					</ul>
 				</section>
 			</article>
